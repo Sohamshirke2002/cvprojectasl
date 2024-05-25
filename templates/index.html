@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Form</title>
+    <link rel="icon" href="static/data/download.jpeg" type="image/icon type">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/data/pratibha.png");
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: white;
         }
         .container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
             width: 300px;
+            color: black; /* Text color inside the container */
         }
         h1 {
             text-align: center;
@@ -31,13 +36,24 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        input[type="text"] {
-            width: calc(100% - 12px);
-            padding: 6px;
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 16px;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #fff;
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px;
         }
         input[type="submit"] {
             width: 100%;
@@ -58,12 +74,35 @@
     <div class="container">
         <h1>Input Form</h1>
         <form action="/result" method="post">
-            <label for="grade">Grade:</label>
-            <input type="text" id="grade" name="grade" required><br><br>
-            
             <label for="work">Work:</label>
-            <input type="text" id="work" name="work" required><br><br>
-            
+            <select name="work" id="work">
+                <option value="SNLS">SNLS</option>
+                <option value="MANUAL">MANUAL</option>
+                <option value="4T O/L">4T O/L</option>
+                <option value="SNCS">SNCS</option>
+                <option value="3T O/L">3T O/L</option>
+                <option value="3T C/S">3T C/S</option>
+                <option value="B/T">B/T</option>
+                <option value="3T I/L">3T I/L</option>
+                <option value="B/H">B/H</option>
+                <option value="H/S">H/S</option>
+                <option value="2T F/L">2T F/L</option>
+                <option value="3T F/L">3T F/L</option>
+                <option value="5T I/L">5T I/L</option>
+                <option value="5T C/S">5T C/S</option>
+                <option value="4T O/E">4T O/E</option>
+                <option value="6T FS">6T FS</option>
+                <option value="BLIND HEM OPENER">BLIND HEM OPENER</option>
+                <option value="SUPREME">SUPREME</option>
+            </select>
+            <label for="grade">Grade:</label>
+            <select name="grade" id="grade">
+                <option value="A+">A +</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
             <input type="submit" value="Submit">
         </form>
     </div>
